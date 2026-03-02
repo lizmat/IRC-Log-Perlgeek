@@ -1,0 +1,8 @@
+use Test;
+use IRC::Log::Perlgeek;
+
+plan 1;
+
+pass "Needs tests";
+
+# vim: expandtab shiftwidth=4

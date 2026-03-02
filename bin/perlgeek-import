@@ -1,0 +1,39 @@
+use IRC::Log::Perlgeek;
+
+unit sub MAIN(
+  $channel?,              #= the channel to import
+  $dir           = ".",   #= where to import to
+  Bool :$verbose = True,  #= whether to show progress
+) {
+    without $channel {
+        note "Please select a channel from:";
+        note IRC::Log::Perlgeek.channels.join(" ").naive-word-wrapper;
+        exit 1;
+    }
+
+    my @failed;
+    my $io    := $dir.IO;
+    my @dates := IRC::Log::Perlgeek.dates-for-channel($channel);
+
+    say "About to import @dates.head() = @dates.tail() (@dates.elems()) days of logs for #$channel"
+      if $verbose;
+
+    for @dates -> $date {
+        print "$date ";
+        with IRC::Log::Perlgeek.new(:$channel, :$date) {
+            .save-as-colabti($io);
+        }
+        else {
+            @failed.push($date);
+        }
+    }
+
+    if @failed {
+        note "The following date(s) failed to import:";
+        note @failed.join(' ').naive-word-wrapper;
+        exit 1;
+    }
+
+    say "\nSuccessfully imported @dates.head() - @dates.tail() (@dates.elems()) days of logs for #$channel"
+      if $verbose;
+}

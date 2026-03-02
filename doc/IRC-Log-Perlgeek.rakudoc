@@ -1,0 +1,105 @@
+=begin pod
+
+=head1 NAME
+
+IRC::Log::Perlgeek - interface to IRC logs from perlgeek.de
+
+=head1 SYNOPSIS
+
+=begin code :lang<raku>
+use IRC::Log::Perlgeek;
+
+my $log = IRC::Log::Perlgeek.new(:$channel, :$date);
+
+say "Logs from $log.date()";
+say $log;
+=end code
+
+=head1 DESCRIPTION
+
+The C<IRC::Log::Perlgeek> distribution provides the logic to read the
+"perlgeek" database that was the data source of the "irc.perlgeek.de"
+website, and produce an C<IRC::Log> compatible object for a given
+channel and date.
+
+=head1 ADDITIONAL INSTANCE METHODS
+
+=head2 save-as-colabti
+
+=begin code :lang<raku>
+my $log = IRC::Log::Perlgeek.new(:$channel, :$date);
+$log.save-as-colabti;
+
+$log.save-as-colabti("IRC-logs");
+=end code
+
+The C<save-as-colabti> method will save the log in a C<IRC::Log::Colabti>
+compatible format in the correct location to be compatible with the logic
+of the C<IRC::Channel::Log> distribution.
+
+By default the file will be stored from the current directory onward,
+A path of C<IO::Path> object to serve as the base, can be specified as
+a positional argument.
+
+=head1 ADDITIONAL CLASS METHODS
+
+=head2 channels
+
+=begin code :lang<raku>
+.say for IRC::Log::Perlgeek.channels;
+=end code
+
+The C<channels> class method returns a C<List> of channel names that
+are available in the "perlgeek" database.
+
+=head2 dates-for-channel
+
+=begin code :lang<raku>
+.say for IRC::Log::Perlgeek.dates-for-channel("parrot");
+=end code
+
+The C<dates-for-channel> class method returns a C<List> of dates as
+strings in YYYY-MM-DD format that are available in the "perlgeek"
+database for the specified channel name.
+
+=head1 SCRIPTS
+
+=head2 perlgeek-import
+
+=begin output
+$ perlgeek-import parrot
+=end output
+
+The C<perlgeek-import> script will import the logs of the given channel
+name into the current directory.  A second argument can be specified to
+indicate the directory in which the logs should be stored.
+
+By default progress will be shown.  This can be inhibited by specifying
+the C<--/verbose> argument.
+
+=head1 PREREQUISITES
+
+The functionality of this distribution assumes the command-line interface to
+the MariaDB servers is installed as "mariadb", and that the Perlgeek database
+is loaded in the server instance by the name "perlgeek".
+
+=head1 AUTHOR
+
+Elizabeth Mattijsen <liz@raku.rocks>
+
+Source can be located at: https://github.com/lizmat/IRC-Log-Perlgeek .
+Comments and Pull Requests are welcome.
+
+If you like this module, or what I'm doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2026 Elizabeth Mattijsen
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+
+=end pod
+
+# vim: expandtab shiftwidth=4

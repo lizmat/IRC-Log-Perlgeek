@@ -1,0 +1,38 @@
+{
+  "auth": "zef:lizmat",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": {
+    "runtime": {
+      "requires": [
+        "IRC::Log:ver<0.0.26+>:auth<zef:lizmat>"
+      ]
+    }
+  },
+  "description": "blah blah blah",
+  "license": "Artistic-2.0",
+  "name": "IRC::Log::Perlgeek",
+  "provides": {
+    "IRC::Log::Perlgeek": "lib/IRC/Log/Perlgeek.rakumod"
+  },
+  "raku": "6.d",
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/IRC-Log-Perlgeek.git",
+  "support": {
+    "bugtracker": "https://github.com/lizmat/IRC-Log-Perlgeek/issues",
+    "email": "liz@raku.rocks",
+    "source": "https://github.com/lizmat/IRC-Log-Perlgeek.git"
+  },
+  "tags": [
+    "IRC",
+    "LOG",
+    "PERLGEEK"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}

@@ -1,0 +1,5 @@
+.precomp/
+/IRC-Log-Perlgeek-*
+*.rakucov
+/releases/
+?
