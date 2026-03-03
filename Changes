@@ -2,5 +2,11 @@ Revision history for IRC::Log::Perlgeek
 
 {{$NEXT}}
 
+0.0.2  2026-03-04T00:53:00+01:00
+    - Make the listing of channels more verbose if verbosity
+      is set
+    - Add documentation on listing of channels if no channel
+      is specified with "perlgeek-import"
+
 0.0.1  2026-03-02T19:48:37+01:00
     - Initial version

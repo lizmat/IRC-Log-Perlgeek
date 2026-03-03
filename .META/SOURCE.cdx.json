@@ -4,7 +4,7 @@
   "specVersion": "1.6",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-03-02T18:49:12+00:00",
+    "timestamp": "2026-03-03T23:53:34+00:00",
     "lifecycles": [
       {
         "phase": "pre-build"
@@ -19,7 +19,7 @@
     "component": {
       "type": "library",
       "mime-type": "text/plain",
-      "bom-ref": "pkg:raku/zef:lizmat/IRC::Log::Perlgeek@0.0.1",
+      "bom-ref": "pkg:raku/zef:lizmat/IRC::Log::Perlgeek@0.0.2",
       "authors": [
         {
           "bom-ref": "ElizabethMattijsen",
@@ -29,7 +29,7 @@
       "publisher": "zef",
       "group": "zef:lizmat",
       "name": "IRC::Log::Perlgeek",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "description": "blah blah blah",
       "scope": "required",
       "licenses": [
@@ -41,14 +41,14 @@
           }
         }
       ],
-      "purl": "pkg:raku/zef:lizmat/IRC::Log::Perlgeek@0.0.1",
+      "purl": "pkg:raku/zef:lizmat/IRC::Log::Perlgeek@0.0.2",
       "externalReferences": [
         {
           "url": "https://github.com/lizmat/IRC-Log-Perlgeek",
           "type": "distribution"
         },
         {
-          "url": "https://raku.land/zef:lizmat/IRC::Log::Perlgeek?v=0.0.1",
+          "url": "https://raku.land/zef:lizmat/IRC::Log::Perlgeek?v=0.0.2",
           "type": "documentation"
         },
         {
@@ -60,7 +60,7 @@
           "type": "license"
         },
         {
-          "url": "https://github.com/lizmat/IRC-Log-Perlgeek/archive/refs/tags/0.0.1.zip",
+          "url": "https://github.com/lizmat/IRC-Log-Perlgeek/archive/refs/tags/0.0.2.zip",
           "type": "source-distribution"
         },
         {
@@ -412,7 +412,7 @@
       "type": "distribution"
     },
     {
-      "url": "https://raku.land/zef:lizmat/IRC::Log::Perlgeek?v=0.0.1",
+      "url": "https://raku.land/zef:lizmat/IRC::Log::Perlgeek?v=0.0.2",
       "type": "documentation"
     },
     {
@@ -424,7 +424,7 @@
       "type": "license"
     },
     {
-      "url": "https://github.com/lizmat/IRC-Log-Perlgeek/archive/refs/tags/0.0.1.zip",
+      "url": "https://github.com/lizmat/IRC-Log-Perlgeek/archive/refs/tags/0.0.2.zip",
       "type": "source-distribution"
     },
     {

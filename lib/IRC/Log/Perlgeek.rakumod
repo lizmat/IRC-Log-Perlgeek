@@ -38,7 +38,7 @@ my sub IO-for-channel-date(
 }
 
 #- IRC::Log::Perlgeek ----------------------------------------------------------
-class IRC::Log::Perlgeek:ver<0.0.1>:auth<zef:lizmat> does IRC::Log {
+class IRC::Log::Perlgeek:ver<0.0.2>:auth<zef:lizmat> does IRC::Log {
     has $.channel;
 
     method !problem(Str:D $line, Int:D $linenr, Str:D $reason --> Nil) {

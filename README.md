@@ -3,7 +3,7 @@
 NAME
 ====
 
-IRC::Log::Perlgeek - interface to IRC logs from perlgeek.de
+IRC::Log::Perlgeek - interface to IRC logs from irclog.perlgeek.de
 
 SYNOPSIS
 ========
@@ -20,7 +20,7 @@ say $log;
 DESCRIPTION
 ===========
 
-The `IRC::Log::Perlgeek` distribution provides the logic to read the "perlgeek" database that was the data source of the "irc.perlgeek.de" website, and produce an `IRC::Log` compatible object for a given channel and date.
+The `IRC::Log::Perlgeek` distribution provides the logic to read the "perlgeek" database that was the data source of the "irclog.perlgeek.de" website, and produce an `IRC::Log` compatible object for a given channel and date.
 
 ADDITIONAL INSTANCE METHODS
 ===========================
@@ -71,6 +71,15 @@ perlgeek-import
 The `perlgeek-import` script will import the logs of the given channel name into the current directory. A second argument can be specified to indicate the directory in which the logs should be stored.
 
 By default progress will be shown. This can be inhibited by specifying the `--/verbose` argument.
+
+If no channel name has been specified, an overview of the available channels will be shown:
+
+    $ perlgeek-import
+    #shibboleth: 2014-01-13 - 2014-01-14 (   2 days)
+        6macros: 2015-02-24 - 2018-06-04 (1174 days)
+        askriba: 2016-08-22 - 2018-06-04 ( 601 days)
+      bioclipse: 2007-07-31 - 2015-11-12 (3002 days)
+    ...
 
 PREREQUISITES
 =============

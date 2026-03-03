@@ -6,8 +6,19 @@ unit sub MAIN(
   Bool :$verbose = True,  #= whether to show progress
 ) {
     without $channel {
+        my @channels := IRC::Log::Perlgeek.channels;
         note "Please select a channel from:";
-        note IRC::Log::Perlgeek.channels.join(" ").naive-word-wrapper;
+        if $verbose {
+            my $width := @channels>>.chars.max;
+            for @channels {
+                my @dates := IRC::Log::Perlgeek.dates-for-channel($_);
+                note sprintf "%{$width}s: %s - %s (%4d days)",
+                  $_, @dates.head, @dates.tail, +@dates;
+            }
+        }
+        else {
+            note @channels.join(" ").naive-word-wrapper;
+        }
         exit 1;
     }
 
